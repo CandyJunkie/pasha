@@ -1,0 +1,8 @@
+client:
+g++ chat_client.c chat_clnt.c chat_xdr.c -pthread -std=c++11 -o chat_client
+./chat_client localhost
+
+server:
+rpcinfo
+g++ chat_server.c chat_svc.c chat_xdr.c chat_server_with_db.c -std=c++11 -lpq -o chat_server
+./chat_server
